@@ -12,11 +12,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montser: "Montserrat, sans-serif",
+        font_extraBold: "font-extra-bold",
+        font_bold: "font-bold",
+        font_semibold: "font-semibold",
+        font_medium: "font-medium",
+        font_regular: "font-regular",
+        font_light: "font-light",
       },
       colors: {
         blue: "#4B4AFB",
         lightBlue: "rgba(75, 74, 251, 0.1)",
+        lightWhite: "rgba(255, 255, 255, 0.9)",
       },
     },
   },

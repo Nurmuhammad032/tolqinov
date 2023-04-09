@@ -1,18 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
 
+@font-face {
+  font-family: "font-extra-bold";
+  src: url("/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "font-bold";
+  src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font-semibold";
+  src: url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font-medium";
+  src: url("/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font-regular";
+  src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font-light";
+  src: url("/fonts/Montserrat-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+body,
 html {
-  font-family: "Montserrat", sans-serif;
+  font-family: "font-regular", "Helvetica Neue", sans-serif;
+  background-color: #f8f8fc;
+  scroll-behavior: smooth !important;
 }
 
 @layer base {
-  html,
-  body {
-    @apply font-montser bg-blue;
-  }
-
   * {
     @apply m-0 p-0 outline-none box-border list-none;
   }
@@ -20,10 +58,43 @@ html {
 
 @layer components {
   .container {
-    @apply max-w-[1320px] mx-auto px-3;
+    @apply lg:max-w-[1320px] max-w-[720px] mx-auto px-3;
   }
 
   nav {
-    @apply max-w-[1360px] mx-auto;
+    @apply 2xl:max-w-[1360px] xl:max-w-[1180px] max-w-none w-full mx-auto;
   }
+
+  .sections {
+    @apply md:my-24 my-16;
+  }
+
+  .section-title {
+    @apply xl:text-5xl lg:text-[2rem] text-[1.7rem] font-font_extraBold text-black leading-[1.2] text-center md:mb-6 mb-4;
+  }
+  .section-subtitle {
+    @apply lg:text-[20px] text-base font-font_medium text-center;
+  }
+}
+.back::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 50%;
+  border-radius: 3.5rem 0 0 3.5rem;
+  height: 100%;
+  background-color: #bef3a3;
+  z-index: 1;
+}
+
+#contact-inputs input,
+#contact-inputs div {
+  width: 100%;
+}
+
+.text-area {
+  margin: 30px 0;
+  color: #323232;
+  font-size: 18px;
+  font-family: "font-regular", "Helvetica Neue", sans-serif;
 }

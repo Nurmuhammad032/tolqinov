@@ -61,6 +61,10 @@ html {
     @apply lg:max-w-[1320px] max-w-[720px] mx-auto px-3;
   }
 
+  .about-container {
+    @apply xl:max-w-[1320px] lg:max-w-4xl max-w-[720px] mx-auto px-3;
+  }
+
   nav {
     @apply 2xl:max-w-[1360px] xl:max-w-[1180px] max-w-none w-full mx-auto;
   }

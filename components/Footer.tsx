@@ -62,7 +62,7 @@ const Footer = ({ selectedLang, setSelectedLang }: Props) => {
                 )
             )}
           </li>
-          <li>
+          <li className="sm:block hidden">
             <a
               href="#"
               className="w-10 h-10 hover:bg-white border border-white hover:text-black text-white transition-all justify-center flex items-center rounded-md ml-6"

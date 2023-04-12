@@ -80,7 +80,7 @@ const Navbar = ({ selectedLang, setSelectedLang }: Props) => {
         isScrolled ? "xl:!px-6 xl:!py-4 !bg-lightWhite" : ""
       }`}
       style={{
-        backdropFilter: "blur(8px)",
+        backdropFilter: "blur(28px)",
         boxShadow: "0.25rem 0 2rem rgba(50, 50, 92, 0.075)",
       }}
     >
@@ -89,7 +89,6 @@ const Navbar = ({ selectedLang, setSelectedLang }: Props) => {
           <ul className="flex items-center">
             <li className="mr-4">
               <Link href={"/"} className="">
-                {t("title")}
                 <img
                   src="https://stepform.io/main/style/assets/img/brand/logo/logo-dark.svg"
                   alt="logo"
@@ -140,11 +139,10 @@ const Navbar = ({ selectedLang, setSelectedLang }: Props) => {
         </div>
       </div>
       <div
-        className={`absolute h-0 lg:hidden left-0 top-[54px] right-0 bg-inherit overflow-auto ${
+        className={`absolute h-0 z-[1300] lg:hidden w-full left-0 top-[53px] right-0 bg-white overflow-auto ${
           open ? "h-screen" : ""
         }`}
         style={{
-          backdropFilter: "blur(8px)",
           transition: "height 0.5s ease-in-out",
         }}
       >

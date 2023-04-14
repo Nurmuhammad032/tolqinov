@@ -102,7 +102,6 @@ const Contact = () => {
             <button
               type="submit"
               className="text-white ml-auto block bg-blue leading-[1.5] py-[0.87rem] px-8 rounded-xl font-font_medium transition-all hover:bg-[#403fd5]"
-              data-aos="fade-up"
             >
               ЗАКАЗАТЬ ТРАНСФЕР
             </button>

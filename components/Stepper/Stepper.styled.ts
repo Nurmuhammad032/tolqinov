@@ -125,7 +125,7 @@ export const FormGroup = styled.div`
     }
   }
 `;
-export const StepperContainer = styled.section`
+export const StepperContainer = styled.div`
   width: 100%;
   transition: all 0.2s ease-in;
   cursor: pointer;
@@ -133,9 +133,13 @@ export const StepperContainer = styled.section`
 
 export const StepperModal = styled.div`
   /* margin: 0 auto; */
+  overflow: hidden;
   background-color: #fff;
-  border-radius: 20px;
-  max-width: 960px;
+  @media screen and (max-width: 1400px) {
+    border-radius: 20px;
+  }
+  max-width: 100%;
+  position: relative;
   width: 100%;
   cursor: initial;
   z-index: 2111;
@@ -266,12 +270,13 @@ const error = keyframes`
 `;
 
 export const Validation = styled.div`
-  padding: 20px 0;
+  overflow: hidden;
   p {
     color: #f95d51;
     font-size: 20px;
     text-align: center;
+  }
+  p.anim {
     animation: ${error} 0.2s linear both;
-    display: none;
   }
 `;

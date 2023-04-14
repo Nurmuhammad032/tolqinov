@@ -89,6 +89,7 @@ const Stepper = () => {
   };
 
   const handleBack = () => {
+    setValidation(false);
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1);
     }
@@ -118,8 +119,9 @@ const Stepper = () => {
         <Validation>
           <p
             style={{
-              display: `${validation ? "block" : "none"}`,
+              visibility: `${validation ? "visible" : "hidden"}`,
             }}
+            className={`${validation ? "anim" : ""}`}
           >
             Пожалуйста, заполните все обязательные поля
           </p>

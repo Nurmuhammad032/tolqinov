@@ -56,6 +56,17 @@ html {
   }
 }
 
+@media screen and (max-width: 1400px) {
+  .stepper {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .keyboard,
+  .mackbook {
+    display: none;
+  }
+}
+
 @layer components {
   .container {
     @apply lg:max-w-[1320px] max-w-[720px] mx-auto px-3;

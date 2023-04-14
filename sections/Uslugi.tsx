@@ -53,12 +53,11 @@ const Uslugi = () => {
           <div className="back relative p-4">
             {data.map(({ img, info, title }, i) => (
               <div
-                data-aos="fade-up"
                 data-aos-duration="800"
                 key={i}
                 className="flex container relative z-20 items-center my-36 flex-wrap justify-center"
               >
-                <div className="w-1/2 pr-24" key={i}>
+                <div className="w-1/2 pr-24" key={i} data-aos="fade-right">
                   <h1 className="text-[2rem] mb-6 font-font_extraBold leading-[1.2] text-black">
                     {title}
                   </h1>
@@ -69,7 +68,7 @@ const Uslugi = () => {
                 <div className="w-1/2">
                   <div
                     className="max-w-[542px] h-[340px] ml-auto w-full"
-                    data-aos="zoom-in"
+                    data-aos="fade-left"
                   >
                     <Image
                       width={500}

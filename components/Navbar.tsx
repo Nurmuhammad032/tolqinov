@@ -90,7 +90,7 @@ const Navbar = ({ selectedLang, setSelectedLang }: Props) => {
             <li className="mr-4">
               <Link href={"/"} className="">
                 <img
-                  src="https://stepform.io/main/style/assets/img/brand/logo/logo-dark.svg"
+                  src="/images/white-logo.png"
                   alt="logo"
                   className="max-w-[137px] min-w-[137px]"
                 />

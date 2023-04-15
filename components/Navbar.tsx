@@ -90,7 +90,7 @@ const Navbar = ({ selectedLang, setSelectedLang }: Props) => {
             <li className="mr-4">
               <Link href={"/"} className="">
                 <img
-                  src="/images/white-logo.png"
+                  src="/images/black-logo2.png"
                   alt="logo"
                   className="max-w-[137px] min-w-[137px]"
                 />

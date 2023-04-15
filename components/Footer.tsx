@@ -24,14 +24,14 @@ const Footer = ({ selectedLang, setSelectedLang }: Props) => {
     <footer className="bg-black py-3">
       <div className="container">
         <img
-          src="/images/exim_logo_white.png"
+          src="/images/white-logo.png"
           alt=""
           className="max-w-[140px] sm:hidden mx-auto mb-5"
         />
         <ul className="flex justify-between items-center">
           <li className="hidden sm:block">
             <img
-              src="/images/exim_logo_white.png"
+              src="/images/white-logo.png"
               alt=""
               className="max-w-[140px]"
             />

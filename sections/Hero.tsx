@@ -57,9 +57,7 @@ const Hero = () => {
           </div>
           <div className="xl:w-1/2 w-full xl:mt-0 mt-5 xl:block hidden relative">
             <div
-              className={`${
-                !showStepper ? "invisible opacity-0" : ""
-              } transition-all duration-500 relative z-20 stepper`}
+              className={`transition-all duration-500 relative z-20 stepper`}
               style={{
                 transitionDelay: `3.8s`,
               }}
@@ -74,13 +72,6 @@ const Hero = () => {
             src="/images/macbook-screen.png"
             alt=""
             className="absolute mackbook left-[33.4rem] w-[54.8rem] h-[556px] -top-[2rem] z-0"
-            style={{
-              transformOrigin: "bottom",
-              transform: `${
-                !showStepper ? "rotateX(-86deg)" : "rotateX(0deg)"
-              }`,
-              transition: "all 3s 0.5s",
-            }}
           />
           <Image
             width={500}

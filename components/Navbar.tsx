@@ -76,7 +76,7 @@ const Navbar = ({ selectedLang, setSelectedLang }: Props) => {
 
   return (
     <nav
-      className={`xl:py-6 py-2 px-3 z-[1300] bg-white lg:transition-all lg:duration-700 duration-200 xl:mt-2 xl:rounded-full xl:px-8 fixed left-0 right-0 ${
+      className={`xl:py-6 py-2 px-3 z-[2500] bg-white lg:transition-all lg:duration-700 duration-200 xl:mt-2 xl:rounded-full xl:px-8 fixed left-0 right-0 ${
         isScrolled ? "xl:!px-6 xl:!py-4 !bg-lightWhite" : ""
       }`}
       style={{

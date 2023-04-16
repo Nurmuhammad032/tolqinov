@@ -203,8 +203,9 @@ export const StepperButtons = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px ${XL_PADDINGX};
-  ${small} {
+  ${medium} {
     padding: 20px ${SM_PADDINGX};
+    flex-direction: column;
   }
   button {
     border-radius: 6px;
@@ -213,6 +214,12 @@ export const StepperButtons = styled.div`
     cursor: pointer;
     display: flex;
     align-items: center;
+    ${medium} {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
     span {
       display: flex;
       align-items: center;

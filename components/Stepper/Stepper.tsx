@@ -11,6 +11,7 @@ import {
   Validation,
 } from "./Stepper.styled";
 import { FillForm, Install, OrderDate, Price, SelectImages } from "./Steps";
+import { toast } from "react-toastify";
 
 const Stepper = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -30,6 +31,22 @@ const Stepper = () => {
 
     setData((prev) => {
       return { ...prev, [name]: value };
+    });
+  };
+  const handleReset = () => {
+    // const { value, name } = e.target;
+    toast.success("Вы успешно отправили заявку!");
+    setCurrentStep(0);
+    setImages([]);
+    setData((prev) => {
+      return {
+        ...prev,
+        install: "",
+        price: "",
+        orderDate: "",
+        name: "",
+        number: "",
+      };
     });
   };
 
@@ -146,7 +163,7 @@ const Stepper = () => {
               </span>
             </button>
           ) : (
-            <button className="font-font_medium">
+            <button className="font-font_medium" onClick={handleReset}>
               УЗНАТЬ СТОИМОСТЬ ПАМЯТНИКА
             </button>
           )}

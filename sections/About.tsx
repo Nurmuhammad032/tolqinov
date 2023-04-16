@@ -13,7 +13,7 @@ const About = () => {
           <h1 className="section-title mb-20" data-aos="fade-up">
             О КОМПАНИИ
           </h1>
-          <div className="flex items-center justify-between">
+          <div className="flex xl:flex-row flex-col items-center justify-between">
             <div className="xl:w-1/2">
               <h1
                 className="sm:text-2xl text-xl font-font_extraBold leading-[1.2] mb-6"
@@ -31,13 +31,13 @@ const About = () => {
                 внушительных объектов по индивидуальным дизайнам.
               </p>
             </div>
-            <div className="xl:w-1/2 xl:block hidden">
-              <div className="max-w-[500px] w-full" data-aos="zoom-in">
+            <div className="xl:w-1/2">
+              <div className="xl:max-w-[500px] w-full" data-aos="zoom-in">
                 <Image
                   width={500}
                   height={500}
                   src="/images/about2.png"
-                  className="w-full translate-x-32 rounded-2xl"
+                  className="w-full xl:translate-x-32 xl:mt-0 mt-5 rounded-2xl"
                   alt=""
                 />
               </div>

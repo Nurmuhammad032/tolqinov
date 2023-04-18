@@ -132,9 +132,8 @@ export const StepperContainer = styled.div`
 `;
 
 export const StepperModal = styled.div`
-  /* margin: 0 auto; */
   overflow: hidden;
-  background-color: #fff;
+  background-color: white;
   @media screen and (max-width: 1400px) {
     border-radius: 20px;
   }
@@ -156,8 +155,7 @@ export const StepperModal = styled.div`
 
 export const StepperHeader = styled.div<ProgressProps>`
   padding: 1.5rem ${XL_PADDINGX};
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(8px);
+  /* background-color: rgba(255, 255, 255, 0.8); */
   display: flex;
   justify-content: space-between;
   font-size: 1.1rem;
@@ -257,8 +255,8 @@ export const StepperButtons = styled.div`
 `;
 
 export const StepperBody = styled.div`
-  min-height: 300px;
-  padding: 35px ${XL_PADDINGX};
+  min-height: 250px;
+  padding: 15px ${XL_PADDINGX};
   ${small} {
     padding: 20px ${SM_PADDINGX};
   }

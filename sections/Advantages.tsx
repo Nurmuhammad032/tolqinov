@@ -35,7 +35,7 @@ const Advantages = () => {
         <h1 className="section-title" data-aos="fade-up">
           Что вы получаете обращаясь к нам
         </h1>
-        <div className="flex flex-wrap items-stretch justify-evenly">
+        <div className="flex flex-wrap justify-evenly">
           {data.map(({ img, title, info }, i) => (
             <AdvantageCard key={i} img={img} title={title} info={info} />
           ))}

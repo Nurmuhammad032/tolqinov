@@ -34,6 +34,15 @@ const Stepper = () => {
     });
   };
   const handleReset = () => {
+    const { name, number } = data;
+    const isValidNumber = number.replace(/\D/g, "");
+    console.log(isValidNumber);
+
+    if (name.length < 3 || isValidNumber.length < 11) {
+      setValidation(true);
+      return;
+    }
+    setValidation(false);
     // const { value, name } = e.target;
     toast.success("Вы успешно отправили заявку!");
     setCurrentStep(0);

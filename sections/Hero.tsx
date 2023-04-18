@@ -66,20 +66,18 @@ const Hero = () => {
             </div>
           </div>
 
-          <Image
-            width={500}
-            height={500}
-            src="/images/macbook-screen.png"
+          <img
+            src="/images/planshet.png"
             alt=""
-            className="absolute mackbook left-[33.4rem] w-[54.8rem] h-[556px] -top-[2rem] z-0"
+            className="absolute mackbook left-[29.4rem] w-[62.8rem] h-[46.4rem] -top-[10.7rem] z-0"
           />
-          <Image
+          {/* <Image
             width={500}
             height={500}
             src="/images/macbook-keyboard.png"
             alt=""
             className="absolute keyboard left-[33.7rem] w-[54.8rem] h-auto -bottom-[4.5rem] z-0"
-          />
+          /> */}
         </div>
       </div>
     </section>

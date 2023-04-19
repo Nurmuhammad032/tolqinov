@@ -1,16 +1,20 @@
+import { useState } from "react";
 import { Stepper } from "../components";
 import { About, Advantages, Contact, Hero, Uslugi } from "../sections";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
+  const [showStepper, setShowStepper] = useState(false);
   return (
     <>
-      <Hero />
-      <section className="sections xl:hidden" id="stepper">
-        <div className="container">
-          <Stepper />
-        </div>
-      </section>
+      <Hero setShowStepper={setShowStepper} />
+      {showStepper && (
+        <section className="sections xl:hidden" id="stepper">
+          <div className="container">
+            <Stepper />
+          </div>
+        </section>
+      )}
       <Advantages />
       <About />
       <Uslugi />

@@ -86,8 +86,8 @@ const Uslugi = () => {
         <div className="xl:hidden">
           {data.map(({ img, info, title }, i) => (
             <div className="max-w-3xl mx-auto p-3" key={i} data-aos="fade-up">
-              <div className="bg-white p-6 rounded-[2.5rem]">
-                <div className="w-[17rem] h-[300px] mb-5">
+              <div className="bg-white p-6 rounded-[2.5rem] text-center">
+                <div className="w-[17rem] h-[300px] mx-auto mb-5">
                   <Image
                     width={500}
                     height={500}

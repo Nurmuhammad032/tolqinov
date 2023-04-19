@@ -33,6 +33,7 @@ const Stepper = () => {
       return { ...prev, [name]: value };
     });
   };
+
   const handleReset = () => {
     const { name, number } = data;
     const isValidNumber = number.replace(/\D/g, "");

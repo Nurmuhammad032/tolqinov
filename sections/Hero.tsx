@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Dispatch, SetStateAction } from "react";
 import { Stepper } from "../components";
 import { initAos } from "../components/initAos";
 import Image from "next/image";
 
-const Hero = () => {
+interface Props {
+  setShowStepper: Dispatch<SetStateAction<boolean>>;
+}
+
+const Hero = ({ setShowStepper }: Props) => {
   useEffect(() => {
     initAos();
   }, []);
-  const [showStepper, setShowStepper] = useState(false);
+  // const [showStepper, setShowStepper] = useState(false);
 
   const handleClick = () => {
-    setShowStepper(true);
+    setShowStepper((prev) => !prev);
   };
-  useEffect(() => {
-    handleClick();
-  }, []);
+
   return (
     <section className="xl:pt-[210px] lg:pt-40 md:pt-32 pt-24 pb-20 bg-blue overflow-hidden">
       <div className="xl:max-w-[1320px] max-w-[720px] mx-auto px-3">
@@ -49,6 +51,7 @@ const Hero = () => {
             <a
               data-aos="fade-up"
               href="#stepper"
+              onClick={handleClick}
               // onClick={handleClick}
               className="px-14 xl:hidden inline-block cursor-pointer py-2 bg-blue border-2 border-white sm:text-base text-xs mt-5 hover:bg-white hover:text-black transition-all font-semibold text-white rounded-xl uppercase"
             >

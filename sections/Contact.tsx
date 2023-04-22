@@ -24,6 +24,7 @@ const Contact = () => {
       return { ...prev, [name]: value };
     });
   };
+  const placeholder = t("input.message") || "Message";
 
   return (
     <section className="sections" id="contact">
@@ -101,7 +102,7 @@ const Contact = () => {
               name="message"
               onChange={handleChange}
               className="w-full resize-none bg-transparent border-b text-area"
-              placeholder={t("input.message")}
+              placeholder={placeholder}
             ></textarea>
             <button
               type="submit"

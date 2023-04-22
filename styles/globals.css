@@ -67,6 +67,10 @@ html {
   }
 }
 
+link[rel="icon"] {
+  background-size: cover !important;
+}
+
 @layer components {
   .container {
     @apply lg:max-w-[1320px] max-w-[720px] mx-auto px-3;

@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
 import { ToastContainer } from "react-toastify";
+import Head from "next/head";
 
 function App({ Component, pageProps }: AppProps) {
   const [selectedLang, setSelectedLang] = useState("ru");
@@ -25,6 +26,18 @@ function App({ Component, pageProps }: AppProps) {
   }, [loading]);
   return (
     <>
+      <Head>
+        <title>
+          Exim | Изготовление памятников и мемориальных комплексов с гарантией
+          до 10 лет
+        </title>
+        <link
+          rel="icon"
+          href="/images/favicon.png"
+          type="image/png"
+          sizes="128x128"
+        />
+      </Head>
       {loading && <Loading />}
       <Navbar selectedLang={selectedLang} setSelectedLang={setSelectedLang} />
       <Component {...pageProps} />

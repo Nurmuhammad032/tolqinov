@@ -96,6 +96,7 @@ const Contact = () => {
               label={t("input.phone")}
               name="number"
             />
+
             <textarea
               name="message"
               onChange={handleChange}

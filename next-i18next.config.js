@@ -6,5 +6,6 @@ module.exports = {
     locales: ["ru", "kk"],
     localeDetection: false,
     localePath: path.resolve("./public/locales"),
+    returnNull: false,
   },
 };

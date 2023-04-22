@@ -3,11 +3,13 @@ import { CustomFormGroup } from "../components/Stepper/Steps";
 import { HiOutlineHome } from "react-icons/hi";
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 import { initAos } from "../components/initAos";
+import { useTranslation } from "next-i18next";
 
 const Contact = () => {
   useEffect(() => {
     initAos();
   }, []);
+  const { t } = useTranslation();
   const [data, setData] = useState({
     name: "",
     number: "",
@@ -28,10 +30,10 @@ const Contact = () => {
       <div className="container">
         <div className="mb-10 max-w-4xl mx-auto">
           <h1 className="section-title" data-aos="fade-up">
-            Хотите мы бесплатно вышлем за вами машину?
+            {t("contact.title")}
           </h1>
           <p className="section-subtitle" data-aos="fade-up">
-            Заполните форму ниже, чтобы мы согласовали с вами дату и время
+            {t("contact.subtitle")}
           </p>
         </div>
         <div className="flex justify-between lg:flex-row flex-col">
@@ -46,7 +48,7 @@ const Contact = () => {
                 </span>
                 <div>
                   <p className="text-lg font-font_medium text-black">
-                    Электронная почта:
+                    {t("contact.gmail")}:
                   </p>
                   <p className="text-sm opacity-90 text-black">
                     monumentkz9@gmail.com
@@ -58,11 +60,11 @@ const Contact = () => {
                   <MdPhone />
                 </span>
                 <div>
-                  <p className="text-lg font-font_medium text-black">
-                    Электронная почта:
+                  <p className="text-lg font-font_medium capitalize text-black">
+                    {t("contact.phone")}:
                   </p>
                   <p className="text-sm opacity-90 text-black">
-                    monumentkz9@gmail.com
+                    +7 (777) 010-41-21
                   </p>
                 </div>
               </div>
@@ -71,10 +73,11 @@ const Contact = () => {
                   <MdLocationOn />
                 </span>
                 <div>
-                  <p className="text-lg font-font_medium text-black">Адрес:</p>
+                  <p className="text-lg font-font_medium text-black">
+                    {t("contact.location_title")}:
+                  </p>
                   <p className="text-sm opacity-90 text-black">
-                    Алматинская обл., Карасайский р-н, с.Коксай, ул.Наурызбай
-                    батыра, 139
+                    {t("contact.location_info")}
                   </p>
                 </div>
               </div>
@@ -84,26 +87,26 @@ const Contact = () => {
             <CustomFormGroup
               onChange={handleChange}
               value={data.name}
-              label="Ваше имя"
+              label={t("input.name")}
               name="name"
             />
             <CustomFormGroup
               onChange={handleChange}
               value={data.number}
-              label="Номер телефона"
+              label={t("input.phone")}
               name="number"
             />
             <textarea
               name="message"
               onChange={handleChange}
               className="w-full resize-none bg-transparent border-b text-area"
-              placeholder="Сообщение"
+              placeholder={t("input.message")}
             ></textarea>
             <button
               type="submit"
               className="text-white ml-auto block bg-blue leading-[1.5] py-[0.87rem] px-8 rounded-xl font-font_medium transition-all hover:bg-[#403fd5]"
             >
-              ЗАКАЗАТЬ ТРАНСФЕР
+              {t("contact.button")}
             </button>
           </div>
         </div>

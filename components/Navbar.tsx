@@ -7,19 +7,19 @@ import { useTranslation } from "next-i18next";
 const links = [
   {
     link: "advantage",
-    label: "Что вы получаете",
+    label: "navbar.advantages",
   },
   {
     link: "about",
-    label: "О компании",
+    label: "navbar.about",
   },
   {
     link: "service",
-    label: "Наши услуги",
+    label: "navbar.uslugi",
   },
   {
     link: "contact",
-    label: "Контакты",
+    label: "navbar.contact",
   },
 ];
 
@@ -102,7 +102,7 @@ const Navbar = ({ selectedLang, setSelectedLang }: Props) => {
                   href={`#${link}`}
                   className="px-6 py-[14px] hover:bg-lightBlue inline-block transition-all hover:text-blue hover:opacity-100 rounded-[13px] font-font_medium opacity-75"
                 >
-                  {label}
+                  {t(label)}
                 </a>
               </li>
             ))}
@@ -154,7 +154,7 @@ const Navbar = ({ selectedLang, setSelectedLang }: Props) => {
                 onClick={() => setOpen(false)}
                 className="px-6 py-[14px] hover:bg-lightBlue block transition-all hover:text-blue hover:opacity-100 md:rounded-[13px] font-font_medium opacity-75"
               >
-                {label}
+                {t(label)}
               </a>
             </li>
           ))}
@@ -182,7 +182,7 @@ const Navbar = ({ selectedLang, setSelectedLang }: Props) => {
           >
             {language.map(({ label, value }) => (
               <li
-                className={`px-6 py-2 transition-all hover:text-blue font-font_medium ${
+                className={`px-6 py-2 transition-all capitalize hover:text-blue font-font_medium ${
                   selectedLang === value ? "bg-blue !text-white" : ""
                 }`}
                 onClick={() => {

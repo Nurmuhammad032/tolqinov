@@ -1,7 +1,7 @@
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import { useState, useEffect } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { HiArrowNarrowLeft } from "react-icons/hi";
-import { IoCloseOutline } from "react-icons/io5";
+import { useTranslation } from "next-i18next";
 import {
   StepperBody,
   StepperButtons,
@@ -14,6 +14,7 @@ import { FillForm, Install, OrderDate, Price, SelectImages } from "./Steps";
 import { toast } from "react-toastify";
 
 const Stepper = () => {
+  const { t } = useTranslation();
   const [currentStep, setCurrentStep] = useState(0);
   const [validation, setValidation] = useState(false);
   const [images, setImages] = useState<string[]>([]);
@@ -44,7 +45,6 @@ const Stepper = () => {
       return;
     }
     setValidation(false);
-    // const { value, name } = e.target;
     toast.success("Вы успешно отправили заявку!");
     setCurrentStep(0);
     setImages([]);
@@ -71,28 +71,23 @@ const Stepper = () => {
 
   const steps = [
     {
-      label:
-        "Ответьте всего на 4 вопроса и узнайте приблизительную стоимость будущего памятника",
+      label: "stepper.header_label",
       content: <SelectImages setImages={setImages} images={images} />,
     },
     {
-      label:
-        "Ответьте всего на 4 вопроса и узнайте приблизительную стоимость будущего памятника",
+      label: "stepper.header_label",
       content: <Install onChange={handleChange} value={data.install} />,
     },
     {
-      label:
-        "Ответьте всего на 4 вопроса и узнайте приблизительную стоимость будущего памятника",
+      label: "stepper.header_label",
       content: <Price onChange={handleChange} value={data.price} />,
     },
     {
-      label:
-        "Ответьте всего на 4 вопроса и узнайте приблизительную стоимость будущего памятника",
+      label: "stepper.header_label",
       content: <OrderDate onChange={handleChange} value={data.orderDate} />,
     },
     {
-      label:
-        "Ответьте всего на 4 вопроса и узнайте приблизительную стоимость будущего памятника",
+      label: "stepper.header_label",
       content: (
         <FillForm
           onChange={handleChange}
@@ -136,7 +131,7 @@ const Stepper = () => {
       <StepperModal onClick={(e) => e.stopPropagation()}>
         <StepperHeader width={progress}>
           <div className="header-content">
-            <h2 className="font-font_medium">{step.label}</h2>
+            <h2 className="font-font_medium">{t(step.label)}</h2>
           </div>
           <h1 className="stepper-steps text-blue">
             {currentStep + 1} / {steps.length}
@@ -150,7 +145,7 @@ const Stepper = () => {
             }}
             className={`${validation ? "anim" : ""}`}
           >
-            Пожалуйста, заполните все обязательные поля
+            {t("stepper.error")}
           </p>
         </Validation>
         <StepperButtons>
@@ -163,18 +158,21 @@ const Stepper = () => {
             <span>
               <HiArrowNarrowLeft />
             </span>
-            Назад{" "}
+            {t("stepper.prev")}{" "}
           </button>
           {currentStep < steps.length - 1 ? (
             <button onClick={handleNext} className="font-font_medium">
-              <div>Далее</div>
+              <div>{t("stepper.next")}</div>
               <span>
                 <HiArrowNarrowRight />
               </span>
             </button>
           ) : (
-            <button className="font-font_medium" onClick={handleReset}>
-              УЗНАТЬ СТОИМОСТЬ ПАМЯТНИКА
+            <button
+              className="font-font_medium uppercase"
+              onClick={handleReset}
+            >
+              {t("stepper.submit")}
             </button>
           )}
         </StepperButtons>

@@ -1,36 +1,37 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import { initAos } from "../components/initAos";
+import { useTranslation } from "next-i18next";
 
 const data = [
   {
-    title: "Памятники",
-    info: "Изготовление и установка памятников и облицовки, все виды работ по камню",
+    title: "uslugi.card1.info_title",
+    info: "uslugi.card1.info_subtitle",
     img: "/images/pamyatniki-1.png",
   },
   {
-    title: "Мазары",
-    info: "Изготовление мазаров любой сложности по индивидуальным проектам",
+    title: "uslugi.card2.info_title",
+    info: "uslugi.card2.info_subtitle",
     img: "/images/pamyatniki-2.png",
   },
   {
-    title: "Сварочные работы",
-    info: "Изготовление мемориальных комплексов любой сложности, все виды работ по камню",
+    title: "uslugi.card3.info_title",
+    info: "uslugi.card3.info_subtitle",
     img: "/images/pngwing.com.png",
   },
   {
-    title: "Брусчатку",
-    info: "Изготовление качественной брусчатки из натурального камня",
+    title: "uslugi.card4.info_title",
+    info: "uslugi.card4.info_subtitle",
     img: "/images/pamyatniki-7.webp",
   },
   {
-    title: "Мемориальные комплексы",
-    info: "Сварочные работы любого уровня сложности в сжатые сроки",
+    title: "uslugi.card5.info_title",
+    info: "uslugi.card5.info_subtitle",
     img: "/images/pamyatniki-3.png",
   },
   {
-    title: "Прочие работы",
-    info: "Прочие работы любого уровня сложности в сжатые сроки",
+    title: "uslugi.card6.info_title",
+    info: "uslugi.card6.info_subtitle",
     img: "/images/pamyatniki-6.png",
   },
 ];
@@ -38,15 +39,16 @@ const Uslugi = () => {
   useEffect(() => {
     initAos();
   }, []);
+  const { t } = useTranslation();
   return (
     <section className="sections" id="service">
       <div className="">
         <div className="mb-[3.25rem] container">
           <h1 className="section-title" data-aos="fade-up">
-            Наши услуги
+            {t("uslugi.title")}
           </h1>
-          <p className="section-subtitle" data-aos="fade-up">
-            МЫ ПРОИЗВОДИМ И УСТАНАВЛИВАЕМ
+          <p className="section-subtitle uppercase" data-aos="fade-up">
+            {t("uslugi.subtitle")}
           </p>
         </div>
         <div className="xl:block hidden">
@@ -59,10 +61,10 @@ const Uslugi = () => {
               >
                 <div className="w-1/2 pr-24" key={i} data-aos="fade-right">
                   <h1 className="text-[2rem] mb-6 font-font_extraBold leading-[1.2] text-black">
-                    {title}
+                    {t(title)}
                   </h1>
                   <p className="mb-4 text-xl font-font_medium text-black">
-                    {info}
+                    {t(info)}
                   </p>
                 </div>
                 <div className="w-1/2">
@@ -98,10 +100,10 @@ const Uslugi = () => {
                 </div>
                 <div>
                   <h1 className="text-[28px] mb-6 font-font_extraBold leading-[1.2] text-black">
-                    {title}
+                    {t(title)}
                   </h1>
                   <p className="mb-4 text-xl font-font_medium text-black">
-                    {info}
+                    {t(info)}
                   </p>
                 </div>
               </div>

@@ -10,6 +10,7 @@ import { BsCheckLg } from "react-icons/bs";
 import { FormGroup, ImageWrapper, SelectImg } from "./Stepper.styled";
 import styled from "styled-components";
 import MaskedInput from "react-text-mask";
+import { useTranslation } from "next-i18next";
 const breakpoints = {
   small: "576px",
   medium: "768px",
@@ -158,7 +159,7 @@ interface ImgProps {
 
 export const SelectImages = ({ setImages, images }: ImgProps) => {
   // const [selectedImages, setSelectedImages] = useState<string[]>([]);
-
+  const { t } = useTranslation();
   const handleImageClick = (value: string) => {
     if (images.includes(value)) {
       setImages(images.filter((image) => image !== value));
@@ -169,7 +170,7 @@ export const SelectImages = ({ setImages, images }: ImgProps) => {
 
   return (
     <SelectImg>
-      <p className="title">Что вы планируете устанавливать?</p>
+      <p className="title">{t("steps.select_images")}</p>
       <ImageWrapper>
         {imageData.map((image) => (
           <div key={image.value}>
@@ -193,17 +194,17 @@ export const SelectImages = ({ setImages, images }: ImgProps) => {
 };
 
 export const Install = ({ onChange, value }: Props) => {
+  const { t } = useTranslation();
   return (
     <FormControl>
       <FormLabel
         sx={{ ...radioLabelStyles }}
         id="demo-radio-buttons-group-label"
       >
-        Готово ли место для установки?
+        {t("steps.install")}
       </FormLabel>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
-        // defaultValue={value}
         name="install"
         value={value}
         onChange={onChange}
@@ -214,7 +215,7 @@ export const Install = ({ onChange, value }: Props) => {
           }}
           value="Да"
           control={<Radio sx={{ ...radioStyles }} size="medium" />}
-          label="Да"
+          label={t("utilits.yes")}
         />
         <FormControlLabel
           sx={{
@@ -222,7 +223,7 @@ export const Install = ({ onChange, value }: Props) => {
           }}
           value="Нет"
           control={<Radio sx={{ ...radioStyles }} />}
-          label="Нет"
+          label={t("utilits.no")}
         />
       </RadioGroup>
     </FormControl>
@@ -230,13 +231,14 @@ export const Install = ({ onChange, value }: Props) => {
 };
 
 export const Price = ({ onChange, value }: Props) => {
+  const { t } = useTranslation();
   return (
     <FormControl>
       <FormLabel
         sx={{ ...radioLabelStyles }}
         id="demo-radio-buttons-group-label"
       >
-        На какой бюджет вы рассчитываете?
+        {t("steps.price_title")}
       </FormLabel>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
@@ -250,7 +252,7 @@ export const Price = ({ onChange, value }: Props) => {
           }}
           value="От 20 000 до 50 000 ₸"
           control={<Radio sx={{ ...radioStyles }} />}
-          label="От 20 000 до 50 000 ₸"
+          label={t("steps.price1")}
         />
         <FormControlLabel
           sx={{
@@ -258,7 +260,7 @@ export const Price = ({ onChange, value }: Props) => {
           }}
           value="От 50 000 до 100 000 ₸"
           control={<Radio sx={{ ...radioStyles }} />}
-          label="От 50 000 до 100 000 ₸"
+          label={t("steps.price2")}
         />
         <FormControlLabel
           sx={{
@@ -266,7 +268,7 @@ export const Price = ({ onChange, value }: Props) => {
           }}
           value="От 100 000 до 200 000 ₸"
           control={<Radio sx={{ ...radioStyles }} />}
-          label="От 100 000 до 200 000 ₸"
+          label={t("steps.price3")}
         />
         <FormControlLabel
           sx={{
@@ -274,7 +276,7 @@ export const Price = ({ onChange, value }: Props) => {
           }}
           value="От 200 000 ₸ и более"
           control={<Radio sx={{ ...radioStyles }} />}
-          label="От 200 000 ₸ и более"
+          label={t("steps.price4")}
         />
       </RadioGroup>
     </FormControl>
@@ -282,13 +284,14 @@ export const Price = ({ onChange, value }: Props) => {
 };
 
 export const OrderDate = ({ onChange, value }: Props) => {
+  const { t } = useTranslation();
   return (
     <FormControl>
       <FormLabel
         sx={{ ...radioLabelStyles }}
         id="demo-radio-buttons-group-label"
       >
-        Когда вам нужно получить заказ?
+        {t("steps.order_title")}
       </FormLabel>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
@@ -302,7 +305,7 @@ export const OrderDate = ({ onChange, value }: Props) => {
           }}
           value="На этой недели"
           control={<Radio sx={{ ...radioStyles }} />}
-          label="На этой недели"
+          label={t("steps.date1")}
         />
         <FormControlLabel
           sx={{
@@ -310,7 +313,7 @@ export const OrderDate = ({ onChange, value }: Props) => {
           }}
           value="В течение 2-х недель"
           control={<Radio sx={{ ...radioStyles }} />}
-          label="В течение 2-х недель"
+          label={t("steps.date2")}
         />
         <FormControlLabel
           sx={{
@@ -318,7 +321,7 @@ export const OrderDate = ({ onChange, value }: Props) => {
           }}
           value="В этом месяце"
           control={<Radio sx={{ ...radioStyles }} />}
-          label="В этом месяце"
+          label={t("steps.date3")}
         />
         <FormControlLabel
           sx={{
@@ -326,7 +329,7 @@ export const OrderDate = ({ onChange, value }: Props) => {
           }}
           value="От 1 месяца и более"
           control={<Radio sx={{ ...radioStyles }} />}
-          label="От 1 месяца и более"
+          label={t("steps.date4")}
         />
       </RadioGroup>
     </FormControl>
@@ -340,18 +343,19 @@ interface FormProps {
 }
 
 export const FillForm = ({ onChange, valueName, valueNumber }: FormProps) => {
+  const { t } = useTranslation();
   return (
     <InputWrapper>
       <CustomFormGroup
         onChange={onChange}
         value={valueName}
-        label="Ваше имя"
+        label={t("input.name")}
         name="name"
       />
       <CustomFormGroup
         onChange={onChange}
         value={valueNumber}
-        label="Номер телефона"
+        label={t("input.phone")}
         name="number"
       />
     </InputWrapper>
